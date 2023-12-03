@@ -1,0 +1,35 @@
+Q.3 Design a Django application: An admin site that lets you add, change and delete 
+programming languages.
+
+Ans ->
+
+1) Update poll/admin.py:
+from django.contrib import admin
+from .models import ProgrammingLanguage
+
+admin.site.register(ProgrammingLanguage)
+
+2) Run the development server:
+python manage.py runserver
+
+3) Access the admin site at http://127.0.0.1:8000/admin/.
+Log in with the superuser credentials that you created during createsuperuser command.
+Navigate to the Programming Languages section.
+Here, you can add, change, and delete programming 
+languages directly through the Django admin interface.
+
+4) Optional: Customize admin views
+
+You can customize the admin views for the Programming Language model by 
+creating a poll/admin.py file and using the ModelAdmin class. 
+For example:
+
+from django.contrib import admin
+from .models import ProgrammingLanguage
+
+class ProgrammingLanguageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'votes')
+    search_fields = ['name']
+
+admin.site.register(ProgrammingLanguage, ProgrammingLanguageAdmin)
+

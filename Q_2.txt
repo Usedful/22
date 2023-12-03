@@ -1,0 +1,11 @@
+Q.2 Write a Python program to prepare Scatter Plot for Iris Dataset
+
+Ans ->
+
+import pandas as pd 
+import matplotlib.pyplot as plt 
+iris=pd.read_csv("Iris.csv") 
+iris.plot(kind="scatter",x='SepalLengthCm',y='PetalLengthCm') 
+
+plt.grid() 
+plt.show()
